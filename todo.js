@@ -12,16 +12,15 @@ taskNamer.addEventListener( "keypress" , (event) => {
 
         else{
         
+        const allTasks=document.querySelector('.alltasks');
         let task = allTasks.innerHTML += `<div id="taskstyle">
         <p id = "paragraph" > ${ taskNamer.value } </p>
         <div id = "favo" ></div>
         <div id = "nofavo" ></div>
         <div id = "editElement" ></div>
         <div id = "deleteElement" ></div>
-        <div>`
-
-        const allTasks=document.querySelector('.alltasks');
-        allTasks.appendChild(tasks);
+        <div>`;
+        allTasks.appendChild(task);
 
         const favorite = document.getElementById("favo");
         favorite.addEventListener( "click" , () => {
