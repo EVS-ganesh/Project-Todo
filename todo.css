@@ -1,0 +1,184 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+
+.headbar{
+    height:60px;
+    width:100vw;
+    color:white;
+    background-color:#2564cf;
+    display:flex;
+    justify-content: space-between;
+}
+
+
+.searchbar{
+    height:40px;
+    width:500px;
+    color:black;
+    background-color:#fff;
+    display:flex;
+    margin-top:10px;
+    border-radius:12px;
+}
+
+
+#todo{
+    margin:12px;
+}
+
+
+.search{
+    height:40px;
+    width:40px;
+    color:#2564cf;
+    background-image: url("sear.png");
+    background-size:30px 30px; 
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color:#fff;
+    border-radius:12px;
+}
+
+#searchbox{
+    height:30px;
+    margin-left:20px;
+    width:400px;
+    color:black;
+    margin-top:2.5px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    font-size:22px;
+}
+
+.taskbar{
+    height:50px;
+    width:90vw;
+    box-shadow:lightgray 5px 3px 6px 2.5px;
+    border-radius:6px;
+    border:none;
+    margin:100px 0px 0px 5%;
+    display: flex;
+    font-size:22px;
+    z-index:5;
+}
+
+#add{
+    color: #2564cf;
+    font-size:30px;
+    margin:7px 15px 7px 15px;
+}
+
+#tasknamer{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:17px;
+}
+
+#taskstyle{
+    height:50px;
+    width:89vw;
+    box-shadow:lightgray 5px 3px 6px 2.5px;
+    border-radius:6px;
+    border:none;
+    margin:20px 0px 0px 5%;
+    display: flex;
+    line-height:50px;
+    padding-left:20px;
+    font-size:22px;
+    position:relative;
+}
+
+#favo{
+  height:25px;
+  width:25px;
+  background-image: url("notfav.png");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size:cover;
+  margin:12.5px;
+  position:absolute;
+  z-index:2;
+  right:88px;
+}
+
+#nofavo{
+    height:25px;
+    width:25px;
+    background-image: url("fav.png");
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size:cover;
+    margin:12.5px;
+    position:absolute;
+    z-index:1;
+    right:88px;
+}
+
+#edit{
+  height:25px;
+  width:25px;
+  background-image: url("edit.png");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size:cover;
+  margin:12.5px;
+  position:absolute;
+  right:48px;
+}
+
+#dele{
+  height:25px;
+  width:25px;
+  background-image: url("delete.png");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size:cover;
+  margin:12.5px;
+  position:absolute;
+  right:12px;
+}
+
+#flisted{
+    border:none;
+    margin:20px 0px 0px -20px;
+    display:flex;
+    flex-direction: column;
+    line-height:50px;
+    padding-left:20px;
+    position:relative;
+}
+
+
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[type="date"]{
+    background-color: #0080ff;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 22.7%;
+    left: 21%;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    display: none;
+    
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
