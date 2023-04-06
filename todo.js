@@ -27,7 +27,7 @@ taskNamer.addEventListener("keypress" , (event) => {
           favorite.addEventListener("click" , () => {
             favorite.style.display = "none" ;
             favorite.nextElementSibling.style.display = "block" ;
-            fList.appendChild(favorite.parentNode.parentNode);
+            fList.appendChild(favorite.parentNode);
           });
         });
 
@@ -36,7 +36,7 @@ taskNamer.addEventListener("keypress" , (event) => {
           unfavorite.addEventListener("click" , () => {
             unfavorite.style.display = "none" ;
             unfavorite.previousElementSibling.style.display = "block" ;
-            allTasks.appendChild(unfavorite.parentNode.parentNode);
+            allTasks.appendChild(unfavorite.parentNode);
           });
         })
 
@@ -57,7 +57,7 @@ taskNamer.addEventListener("keypress" , (event) => {
        const deleteElements = document.querySelectorAll("#deleteElement");
        deleteElements.forEach(deleteElement =>{
          deleteElement.addEventListener("click" , function(){
-           deleteElement.parentNode.parentNode.remove();
+           deleteElement.parentNode.remove();
          });
       });
     }
