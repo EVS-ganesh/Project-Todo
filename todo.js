@@ -1,4 +1,5 @@
 const searchBox = document.querySelector("#searchbox");
+const taskArray = [];
 
 const taskNamer = document.querySelector("#tasknamer");
 taskNamer.addEventListener("keypress" , (event) => {
@@ -10,7 +11,6 @@ taskNamer.addEventListener("keypress" , (event) => {
 
         else{
         const allTasks=document.querySelector(".alltasks");
-
         let task = document.createElement("div");
         task.innerHTML = `<div id="taskstyle">
         <p id = "paragraph" > ${ taskNamer.value } </p>
