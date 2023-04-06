@@ -1,5 +1,5 @@
 const searchBox = document.querySelector("#searchbox");
-const taskArray = JSON.parse(localStorage.getItem("tasks")) || []; // Retrieve tasks from local storage, or initialize as an empty array
+const taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
 
 const taskNamer = document.querySelector("#tasknamer");
 taskNamer.addEventListener("keypress", (event) => {
