@@ -3,11 +3,10 @@ const searchBox=document.querySelector('#searchbox');
 
 const taskNamer=document.querySelector('#tasknamer');
 taskNamer.addEventListener( "keypress" , (event) => {
-    console.log(this);
 
     if(event.key === "Enter" ){
         if(taskNamer.value === "" || taskNamer.value[0] === " " ){
-            console.log(`task ${event.value} not entered`);
+            console.log(`task not entered`);
         }
 
         else{
