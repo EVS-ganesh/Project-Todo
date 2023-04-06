@@ -93,7 +93,7 @@
     position:relative;
 }
 
-#favo{
+#favorite{
   height:25px;
   width:25px;
   background-image: url("notfav.png");
@@ -106,7 +106,7 @@
   right:88px;
 }
 
-#unfavo{
+#unfavorite{
     height:25px;
     width:25px;
     background-image: url("fav.png");

@@ -15,21 +15,21 @@ taskNamer.addEventListener( "keypress" , (event) => {
         const allTasks=document.querySelector('.alltasks');
         let task = allTasks.innerHTML += `<div id="taskstyle">
         <p id = "paragraph" > ${ taskNamer.value } </p>
-        <div id = "favo" ></div>
-        <div id = "nofavo" ></div>
+        <div id = "favorite" ></div>
+        <div id = "unfavorite" ></div>
         <div id = "editElement" ></div>
         <div id = "deleteElement" ></div>
         <div>`;
         allTasks.appendChild(task);
 
-        const favorite = document.getElementById("favo");
+        const favorite = document.querySelector("#favorite");
+        const unfavorite = document.querySelector("#unfavorite");
         favorite.addEventListener( "click" , () => {
           favorite.style.display = "none" ;
           unfavorite.style.display = "block" ;
           fList.appendChild(task);
         });
- 
-        const unfavorite = document.getElementById("unfavo");
+
         unfavorite.addEventListener( "click" , () => {
             unfavorite.style.display = "none" ;
             favorite.style.display = "block" ;
