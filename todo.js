@@ -21,25 +21,17 @@ taskNamer.addEventListener("keypress" , (event) => {
         <div id = "editElement" ></div>
         <div id = "deleteElement" ></div>
         <div>`;
-        allTasks.appendChild(task);
+        allTasks.appendChild(task);        
 
-        // const taskObj = {
-        //   taskName: taskNamer.value,
-        //   isFavorite: false,
-        //   isEditable: false
-        // };
-
-        // taskArray.push(taskObj);
-        // localStorage.setItem("tasks", JSON.stringify(taskArray));
         
         const done = document.querySelectorAll("#done");
-        const paragraph = event.target.parentNode.querySelector("#paragraph");
+        const paragraph = document.querySelector("#paragraph");
         const completedTasks = document.querySelectorAll(".completedtasks");
         done.forEach(strikeoff => {
           strikeoff.addEventListener("click" , () => {
             paragraph.style.textDecoration = "none" ;
-            strikeoff.style.display = "none" ;
             strikeoff.nextElementSibling.style.display = "block" ;
+            strikeoff.style.display = "none" ; 
             completedTasks.appendChild(strikeoff.parentNode);
            });
         });
