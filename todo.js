@@ -81,14 +81,13 @@ taskNamer.addEventListener("keypress", (event) => {
         });
       });
 
-      // Store task in local storage
+      
       taskArray.push(task.innerHTML);
       localStorage.setItem("tasks", JSON.stringify(taskArray));
     }
   }
 });
 
-// Retrieve tasks from local storage and display them when the page loads
 const displayTasks = () => {
   const allTasks = document.querySelector(".alltasks");
   const retrievedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
