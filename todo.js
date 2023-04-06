@@ -13,6 +13,8 @@ taskNamer.addEventListener("keypress" , (event) => {
         const allTasks=document.querySelector(".alltasks");
         let task = document.createElement("div");
         task.innerHTML = `<div id="taskstyle">
+        <div id = "done" ></div>
+        <div id = "undone" ></div>
         <p id = "paragraph" > ${ taskNamer.value } </p>
         <div id = "favorite" ></div>
         <div id = "unfavorite" ></div>
@@ -21,13 +23,36 @@ taskNamer.addEventListener("keypress" , (event) => {
         <div>`;
         allTasks.appendChild(task);
 
-        const taskObj = {
-          taskName: taskNamer.value,
-          isFavorite: false,
-          isEditable: false
-        };
-        taskArray.push(taskObj);
-        localStorage.setItem("tasks", JSON.stringify(taskArray));
+        // const taskObj = {
+        //   taskName: taskNamer.value,
+        //   isFavorite: false,
+        //   isEditable: false
+        // };
+
+        // taskArray.push(taskObj);
+        // localStorage.setItem("tasks", JSON.stringify(taskArray));
+        
+        const done = document.querySelectorAll("#done");
+        const paragraph = event.target.parentNode.querySelector("#paragraph");
+        const completedTasks = document.querySelectorAll(".completedtasks");
+        done.forEach(strikeoff => {
+          strikeoff.addEventListener("click" , () => {
+            paragraph.style.textDecoration = "none" ;
+            strikeoff.style.display = "none" ;
+            strikeoff.nextElementSibling.style.display = "block" ;
+            completedTasks.appendChild(strikeoff.parentNode);
+           });
+        });
+
+        const undone = document.querySelectorAll("#undone");
+        undone.forEach(unstrikeoff => {
+          unstrikeoff.addEventListener("click" , () => {
+            paragraph.style.textDecoration = "line-through" ;
+            unstrikeoff.style.display = "none" ;
+            unstrikeoff.previousElementSibling.style.display = "block" ;
+            allTasks.appendChild(unstrikeoff.parentNode);
+           });
+        });
         
         const fList = document.querySelector("#flisted");
         const favorites = document.querySelectorAll("#favorite");
@@ -50,7 +75,6 @@ taskNamer.addEventListener("keypress" , (event) => {
 
           const editElements = document.querySelectorAll("#editElement");
           editElements.forEach(editElement =>{
-          const paragraph = document.querySelector("#paragraph");
           editElement.addEventListener("click" , () => {
              paragraph.contentEditable = "true" ;
              paragraph.style.outline = "none" ;

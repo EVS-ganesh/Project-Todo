@@ -93,6 +93,32 @@
     position:relative;
 }
 
+#done{
+    height:25px;
+    width:25px;
+    background-image: url("done.png");
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size:cover;
+    margin:12.5px;
+    position:absolute;
+    left:12px;
+    z-index:1;
+}
+
+#undone{
+  height:25px;
+  width:25px;
+  background-image: url("undone.png");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size:cover;
+  margin:12.5px;
+  position:absolute;
+  left:12px;
+  z-index:2;
+}
+
 #favorite{
   height:25px;
   width:25px;
@@ -117,6 +143,10 @@
     position:absolute;
     z-index:1;
     right:88px;
+}
+
+#paragraph{
+    margin-left:50px;
 }
 
 #editElement{
