@@ -6,6 +6,7 @@ taskNamer.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         if (taskNamer.value === "" || taskNamer.value[0] === " ") {
             console.log(`task not entered`);
+
         } else {
             const allTasks = document.querySelector(".alltasks");
             let task = document.createElement("div");
@@ -83,7 +84,6 @@ taskNamer.addEventListener("keypress", (event) => {
 
             taskArray.push(taskNamer.value);
             localStorage.setItem("tasks", JSON.stringify(taskArray));
-            localStorage.getItem("tasks", JSON.parse(taskArray));
         }
     }
 });

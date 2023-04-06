@@ -183,32 +183,48 @@
     position:relative;
 }
 
+.completedtasks{
+    margin-top:50px;
+}
 
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+#PT{
+    height:50px;
+    width:90vw;
+    box-shadow:lightgray 5px 3px 6px 2.5px;
+    background-color: #2564cf;
+    color: #fff;
+    line-height:50px;
+    border-radius:6px;
+    border:none;
+    margin:100px 0px 0px 5%;
+    font-size:22px;
+    padding-left:12px;
 }
-input[type="date"]{
-    background-color: #0080ff;
-    padding: 10px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 22.7%;
-    left: 21%;
-    font-family: "Roboto Mono",monospace;
-    color: #ffffff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    display: none;
-    
+
+#CT{
+    height:50px;
+    width:90vw;
+    box-shadow:lightgray 5px 3px 6px 2.5px;
+    background-color: #2564cf;
+    color: #fff;
+    line-height:50px;
+    border-radius:6px;
+    border:none;
+    margin:100px 0px 0px 5%;
+    font-size:22px;
+    padding-left:12px;
 }
-::-webkit-calendar-picker-indicator{
-    background-color: #ffffff;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
+
+#IT{
+    height:50px;
+    width:90vw;
+    box-shadow:lightgray 5px 3px 6px 2.5px;
+    border-radius:6px;
+    background-color: #2564cf;
+    color: #fff;
+    line-height:50px;
+    border:none;
+    margin:100px 0px 0px 5%;
+    font-size:22px;
+    padding-left:12px;
 }
