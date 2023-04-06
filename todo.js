@@ -23,9 +23,8 @@ taskNamer.addEventListener("keypress" , (event) => {
         <div>`;
         allTasks.appendChild(task);        
 
-        
-        const done = document.querySelectorAll("#done");
-        const paragraph = document.querySelector("#paragraph");
+        const done = task.querySelectorAll("#done");
+        const paragraph = task.querySelector("#paragraph");
         const completedTasks = document.querySelectorAll(".completedtasks");
         done.forEach(strikeoff => {
           strikeoff.addEventListener("click" , () => {
@@ -36,7 +35,7 @@ taskNamer.addEventListener("keypress" , (event) => {
            });
         });
 
-        const undone = document.querySelectorAll("#undone");
+        const undone = task.querySelectorAll("#undone");
         undone.forEach(unstrikeoff => {
           unstrikeoff.addEventListener("click" , () => {
             paragraph.style.textDecoration = "line-through" ;
@@ -45,9 +44,9 @@ taskNamer.addEventListener("keypress" , (event) => {
             allTasks.appendChild(unstrikeoff.parentNode);
            });
         });
-        
+
         const fList = document.querySelector("#flisted");
-        const favorites = document.querySelectorAll("#favorite");
+        const favorites = task.querySelectorAll("#favorite");
         favorites.forEach(favorite => {
           favorite.addEventListener("click" , () => {
             favorite.style.display = "none" ;
@@ -56,34 +55,34 @@ taskNamer.addEventListener("keypress" , (event) => {
           });
         });
 
-        const unfavorites = document.querySelectorAll("#unfavorite");
+        const unfavorites = task.querySelectorAll("#unfavorite");
         unfavorites.forEach(unfavorite =>{
           unfavorite.addEventListener("click" , () => {
             unfavorite.style.display = "none" ;
             unfavorite.previousElementSibling.style.display = "block" ;
             allTasks.appendChild(unfavorite.parentNode);
           });
-        })
-
-          const editElements = document.querySelectorAll("#editElement");
-          editElements.forEach(editElement =>{
-          editElement.addEventListener("click" , () => {
-             paragraph.contentEditable = "true" ;
-             paragraph.style.outline = "none" ;
-             paragraph.addEventListener("keypress" , (event) => {
-             if(event.key === "Enter" ){
-                  paragraph.contentEditable = "false" ;
-               }
-            })
         });
-     })
-        
-       const deleteElements = document.querySelectorAll("#deleteElement");
-       deleteElements.forEach(deleteElement =>{
-         deleteElement.addEventListener("click" , function(){
-           deleteElement.parentNode.remove();
-         });
-      });
+
+        const editElements = task.querySelectorAll("#editElement");
+        editElements.forEach(editElement =>{
+          editElement.addEventListener("click" , () => {
+            paragraph.contentEditable = "true" ;
+            paragraph.style.outline = "none" ;
+            paragraph.addEventListener("keypress" , (event) => {
+              if(event.key === "Enter" ){
+                paragraph.contentEditable = "false" ;
+              }
+            })
+          });
+        });
+
+        const deleteElements = task.querySelectorAll("#deleteElement");
+        deleteElements.forEach(deleteElement =>{
+          deleteElement.addEventListener("click" , function(){
+            deleteElement.parentNode.remove();
+          });
+        });
+      }
     }
-  }
 });
