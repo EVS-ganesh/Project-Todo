@@ -9,14 +9,14 @@ taskNamer.addEventListener("keypress", (event) => {
         } else {
             const allTasks = document.querySelector(".alltasks");
             let task = document.createElement("div");
-            task.innerHTML = `<div id="taskstyle">
-            <div id="done"></div>
-            <div id="undone"></div>
-            <p id="paragraph">${taskNamer.value}</p>
-            <div id="favorite"></div>
-            <div id="unfavorite"></div>
-            <div id="editElement"></div>
-            <div id="deleteElement"></div>
+            task.innerHTML = `<div id = "taskstyle" >
+            <div id = "done"></div>
+            <div id = "undone"></div>
+            <p id = "paragraph">${taskNamer.value}</p>
+            <div id = "favorite"></div>
+            <div id = "unfavorite"></div>
+            <div id = "editElement"></div>
+            <div id = "deleteElement"></div>
             <div>`;
             allTasks.appendChild(task);
 
