@@ -20,6 +20,14 @@ taskNamer.addEventListener("keypress" , (event) => {
         <div id = "deleteElement" ></div>
         <div>`;
         allTasks.appendChild(task);
+
+        const taskObj = {
+          taskName: taskNamer.value,
+          isFavorite: false,
+          isEditable: false
+        };
+        taskArray.push(taskObj);
+        localStorage.setItem("tasks", JSON.stringify(taskArray));
         
         const fList = document.querySelector("#flisted");
         const favorites = document.querySelectorAll("#favorite");
