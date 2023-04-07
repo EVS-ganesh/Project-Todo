@@ -1,13 +1,20 @@
 const searchBox = document.querySelector("#searchbox");
-const taskArray = [];
-
+const allTasks = document.querySelector(".alltasks");
 const taskNamer = document.querySelector("#tasknamer");
+let taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
+
 taskNamer.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
+    
     if (taskNamer.value === "" || taskNamer.value[0] === " ") {
       console.log(`task not entered`);
     } else {
-      const allTasks = document.querySelector(".alltasks");
+      const taskVal = {
+        taskName : taskNamer.value,
+        completed : false,
+        favorite : false
+      }
+
       let task = document.createElement("div");
       task.innerHTML = `<div id="taskstyle">
         <div id = "done" ></div>
@@ -22,13 +29,14 @@ taskNamer.addEventListener("keypress", (event) => {
 
       const done = task.querySelectorAll("#done");
       const paragraph = task.querySelector("#paragraph");
-      const completedTasks = document.querySelector(".completedtasks"); // Updated line
+      const completedTasks = document.querySelector(".completedtasks"); 
       done.forEach(strikeoff => {
         strikeoff.addEventListener("click", () => {
           paragraph.style.textDecoration = "none";
           strikeoff.nextElementSibling.style.display = "block";
           strikeoff.style.display = "none";
           allTasks.appendChild(strikeoff.parentNode);
+          taskVal.completed=false;
         });
       });
 
@@ -39,6 +47,7 @@ taskNamer.addEventListener("keypress", (event) => {
           unstrikeoff.style.display = "none";
           unstrikeoff.previousElementSibling.style.display = "block";
           completedTasks.appendChild(unstrikeoff.parentNode);
+          taskVal.completed=true;
         });
       });
 
@@ -49,6 +58,7 @@ taskNamer.addEventListener("keypress", (event) => {
           favorite.style.display = "none";
           favorite.nextElementSibling.style.display = "block";
           fList.appendChild(favorite.parentNode);
+          taskVal.favorite=false;
         });
       });
 
@@ -58,6 +68,7 @@ taskNamer.addEventListener("keypress", (event) => {
           unfavorite.style.display = "none";
           unfavorite.previousElementSibling.style.display = "block";
           allTasks.appendChild(unfavorite.parentNode);
+          taskVal.favorite=true;
         });
       });
 
@@ -81,21 +92,8 @@ taskNamer.addEventListener("keypress", (event) => {
         });
       });
 
-      
-      taskArray.push(task.innerHTML);
+      taskArray.push(taskVal);
       localStorage.setItem("tasks", JSON.stringify(taskArray));
     }
   }
 });
-
-const displayTasks = () => {
-  const allTasks = document.querySelector(".alltasks");
-  const retrievedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  retrievedTasks.forEach(taskHTML => {
-    let task = document.createElement("div");
-    task.innerHTML = taskHTML;
-    allTasks.appendChild(task);
-  });
-};
-
-displayTasks();
